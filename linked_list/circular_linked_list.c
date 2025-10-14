@@ -21,13 +21,13 @@ struct Node* insert_node(struct Node *head, int value) {
     new_node->value = value;
 
     if (head == NULL) {
-        new_node->next = new_node; // if there's only one node, it points to itself
+        new_node->next = new_node; // if there's only one node, it will point itself
         return new_node;
     }
 
     struct Node *current = head;
     while (current->next != head) {
-        current = current->next; // advance to the last node
+        current = current->next; // go to the last 
     }
 
     current->next = new_node; // add new node at the end
@@ -42,7 +42,7 @@ void print_list(struct Node *head) {
     do {
         printf("%d -> ", current->value);
         current = current->next; 
-    } while (current != head); // repeat until we return to head (ensures all nodes are processed)
+    } while (current != head); // do {} while; for skip first iteration, that will be false 
 
     printf("NULL\n");
 }
@@ -51,13 +51,13 @@ void free_linked_list(struct Node *head) {
     if (!head) return;
 
     struct Node *current = head;
-    struct Node *next_node; // temporary pointer to store the next node after the current
+    struct Node *next_node; // the next node after the current
 
     do {
         next_node = current->next;
         free(current);
-        current = next_node; // move to the next node after freeing the current one
-    } while (current != head); // repeat until we return to head (ensures all nodes are processed)
+        current = next_node; // current was freed so we set the next node to free
+    } while (current != head); // do {} while; for skip first iteration, that will be false
 
     printf("Free memory process completed.\n");
 }
