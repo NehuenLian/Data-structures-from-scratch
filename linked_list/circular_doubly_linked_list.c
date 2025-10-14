@@ -109,7 +109,8 @@ void free_linked_list(struct LinkedList *linked_list) {
         free(current);
         current = next_node;
     } while (current != linked_list->head); // do {} while; for skip first iteration, that will be false 
-
+    free(linked_list);
+    
     printf("Free memory process completed.\n");
 }
 
