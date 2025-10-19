@@ -43,7 +43,7 @@ struct LinkedList* insert_at_tail(struct LinkedList *linked_list, int value) {
         linked_list->tail->next = new_node; // update before we change the head
         linked_list->head->prev = new_node;
 
-        linked_list->tail = new_node; // only update the head, tail still being the same node, because we inserted in head
+        linked_list->tail = new_node; // only update the tail, head still being the same node, because we inserted in head
         
     }
     return linked_list;
