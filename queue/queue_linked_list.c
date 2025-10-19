@@ -105,5 +105,6 @@ int main() {
 
     // free references
     free(linked_list);
-    printf("Finish.\n");
+
+    return 0;
 }
