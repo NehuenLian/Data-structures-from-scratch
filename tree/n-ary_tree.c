@@ -76,7 +76,16 @@ int main() {
     add_child(n2, create_node(5));
     add_child(n2, create_node(6));
     add_child(n3, create_node(7));
-
+    /*
+    Out:
+    1
+     2
+      5
+      6
+     3
+      7
+     4
+    */
     print_preorder(root, 0); // print the tree from root (0 arg is only for visual indentation)
     free_tree(root); // free tree to root
 
