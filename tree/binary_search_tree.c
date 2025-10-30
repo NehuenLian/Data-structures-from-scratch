@@ -84,7 +84,7 @@ struct Node* min_value_node(struct Node* node) {
     /*
     Search the min value going to the left
     */
-    struct Node* current = node;
+    struct Node *current = node;
 
     while (current && current->left != NULL) {
         current = current->left;
