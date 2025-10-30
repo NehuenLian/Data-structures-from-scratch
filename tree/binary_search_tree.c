@@ -22,9 +22,11 @@ struct Node* insert_node(int value, struct Node *root) {
 
     if (value < root->value) {
         root->left = insert_node(value, root->left);
-    } else if (value > root->value) {
+    } 
+    else if (value > root->value) {
         root->right = insert_node(value, root->right);
-    } else {
+    } 
+    else {
         printf("Duplicated value %d. Ignored.\n", value);
     }
     return root;
@@ -101,7 +103,8 @@ struct Node* delete_value(struct Node *root, int value) {
     }
     else if (value > root->value) {
         root->right = delete_value(root->right, value);
-    } else {
+    } 
+    else {
         // If left and right are NULL (leaf node)
         if (root->left == NULL && root->right == NULL) {
             free(root);
@@ -134,7 +137,6 @@ struct Node* delete_value(struct Node *root, int value) {
             from the right subtree and delete the node that has the min node from the right subtree. 
             */
         }
-
     }
     return root;
 }
